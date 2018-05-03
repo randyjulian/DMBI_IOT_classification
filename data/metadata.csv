@@ -1,0 +1,81 @@
+,0,1
+0,"..._ip, ..._port",(4): IP and port of client / srver
+1,packets_...,(3): Number of packets sent by client / server / both
+2,ack_...,(3): Number of ACK packets sent by client / server / both
+3,packets_A_B_ratio,(1): Ratio between packets sent by client and sent by server
+4,asn_...,"(2): Number of autonomous systems served as client, server"
+5,push_...,(3): Number of packets with PSH flag sent by client / server / both
+6,bytes_...,(3): Number of bytes sent by client / server / both
+7,reset_...,(3): Number of packets with RST flag sent by client / server / both
+8,bytes_A_B_ratio,(1): Ratio between number of bytes sent and number of bytes received
+9,ssl_count_certificates,(1): Number of SSL certificates
+10,cap_date,(1): date of data capturing start
+11,ssl_count_client_...,(6): Client: Number of supported SSL cipher algorithms / ciphersuites / compressions / eliptic curves / key exchange algorithms / MAC algorithms
+12,country_...,(2): Number of countries systems served as client / server
+13,ssl_count_server_...,(6): Server: Number of supported SSL cipher algorithms / ciphersuites / compressions / eliptic curves / key exchange algorithms / MAC algorithms
+14,daysTime,(1): When during the day communication was established
+15,ssl_dom_server_ciphersuite,(1): Number of SSL versions
+16,dns_alexaRank,(1): DNS response server Alexa rank
+17,ssl_dom_server_compression,(5): Dominated SSL ciphersuite / eliptic curve / server name / server rank / version
+18,dns_count_addresses,(4): Number of adresses / answer / authoritative / additional fields in DNS response
+19,ssl_handshake_duration_...,"(10): SSL handshake duration: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+20,dns_count_canon_names,(1): Number of canonical names in DNS response
+21,ssl_ratio_...,(7): Ratio between ssl sessions and: expired certificates / client cipher algorithms / ciphersuits / eliptic curves / client key exchange algorithms / client MAC algorithms / server names
+22,dns_flag,(1): DNS response flags combinations
+23,ssl_req_bytes_...,"(10): Number of request bytes: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+24,dns_host_name,(1): DNS host name
+25,ssl_resp_bytes_...,"(10): Number of response bytes: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+26,dns_min_ttl,(1): DNS response minimal time-to-live
+27,start,(1): session start (date-time)
+28,dns_pre_bad_requests,(1): Number of preceding bad DNS responses
+29,tcp_analysis_...,(6): TCP: Number of packets with Keep Alive packets / lost segments / packets received out of order / retransmitted packets / reused ports / duplicake ACKs
+30,dns_time,(1): Time took to receive DNS response
+31,ttl_A_...,"(10): TCP packet time-to-live sent by client: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+32,ds_field_...,(2): Differentiated Services (DS) field sent by client / server
+33,ttl_...,"(10): TCP packet time-to-live: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+34,duration,(1): Session duration
+35,ttl_B_...,"(10): TCP packet time-to-live sent by server: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+36,http_bytes_...,"(10): Number of bytes sent by client over HTTP: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy."
+37,urg_...,(3): Packets with URG flag sent by client / server / both
+38,http_cookie_count,(1): Total number of cookie values
+39,weekDay,"(1): day of week (Sunday, Monday, …)"
+40,http_cookie_values_...,"(10): Number of cookie values: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+41,domain / subdomain / suffix,(3): Dminated host's URL: domain / subdomain / suffix
+42,http_count_...,(6): HTTP: Number of hosts / unique content types used in request / unique response codes / unique response content types / transactions / unique user agents
+43,is_ad_http,(1): subdomain of HTTP dominated host includes ad-related keywords
+44,http_dom_...,(8): Dominated HTTP: browser / browser version / host / host Alexa rank / operating system / operating system version / request contetn type / response code / response contetn type /
+45,is_cdn_http,(1): subdomain of HTTP dominated host includes CDN-related keywords
+46,http_dom_is_bot,(1): Is most of HTTP connections created by known bot
+47,is_cloud_http,(1): subdomain of HTTP dominated host includes cloud-related keywords
+48,http_GET,(1): Number of HTTP requests submited with GET method
+49,is_...,(3): session protocol is DNS / HTTP / SSL
+50,http_has_...,(4): Does HTTP request have a location / referrer / content type / user agent field
+51,is_g_http,(1): subdomain of HTTP dominated host includes g-related keywords
+52,http_has_resp_content_type,(1): Does HTTP response have a content type field
+53,is_img_http,(1): subdomain of HTTP dominated host includes image-related keywords
+54,http_inter_arrivel_...,"(10): HTTP request-response inter arrival time: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+55,is_m_http,(1): subdomain of HTTP dominated host includes mobile-related keywords
+56,http_POST,(1): Number of HTTP requests submited with POST method
+57,is_maker_site_http,(1): subdomain of HTTP dominated host is of a maker's site
+58,http_req_bytes_...,"(10): HTTP request bytes: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+59,is_media_http,(1): subdomain of HTTP dominated host includes media-related keywords
+60,http_resp_bytes_...,"(10): HTTP response bytes: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+61,is_numeric_url_http,(1): subdomain of HTTP dominated host is numeric
+62,http_time_...,"(10): Time took to HTTP server to return response: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+63,is_numeric_url_with_port_http,(1): subdomain of HTTP dominated host is numeric plus port name
+64,label,(1): malware label
+65,is_tv_http,(1): HTTP dominated host has TV-related keywords
+66,labelSS,(1): malware label
+67,B_is_system_port,"(1): destination port is in the range of [1, 1023]"
+68,packet_inter_arrivel_A_...,"(10): Client packets inter arival time: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+69,B_is_user_port,"(1): destination port is in the range of [1024, 49151]"
+70,packet_inter_arrivel_...,"(10): Packets inter arival time: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+71,B_is_dynamic_and_or_private_port,"(1): destination port is in the range of [49152, 65535]"
+72,packet_inter_arrivel_B_...,"(10): Server packets inter arival time: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+73,B_port_is_...,"(10): Destination port is one of recent top 10 most frequent: 80, 23, etc."
+74,packet_size_A_...,"(10): Client packets size: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+75,subdomain_is_...,(10): subdomain of HTTP dominated host is one of recent top 10 most frequent
+76,packet_size_...,"(10): Packets size: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+77,domain_is_...,(10): domain of HTTP dominated host is one of recent top 10 most frequent
+78,packet_size_B_...,"(10): Server packets size: Minimum value, quartile 1, average, median (quartile 2), sum, quartile 3, maximum value, standard deviation, variance, entropy"
+79,suffix_is_...,"(4): suffix of HTTP dominated host is one of recent top 4most frequent: com, net, etc."
