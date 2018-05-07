@@ -4,7 +4,7 @@ import csv
 import numpy as np
 import pandas as pd
 
-import xgboost
+import xgboost as xgb
 from sklearn.externals import joblib
 from sklearn.utils import compute_class_weight
 from sklearn.metrics import classification_report, log_loss
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     # no_nans.to_csv('number of nans per column.csv')
     # cleaned_df = df2.dropna(axis=0, how='any')
 
-    cleaned_df = joblib.load('cleaned_df.pkl')
+    # cleaned_df = joblib.load('cleaned_df.pkl')
 
     # x = cleaned_df.drop('device_category', axis=1)
     # y = cleaned_df['device_category']
@@ -100,49 +100,49 @@ if __name__ == '__main__':
     #
     # logloss = log_loss(y_test, pred_y)
 
-    all_y = cleaned_df['device_category']
-
-    distinct_classes = np.unique(all_y).tolist()
-
-    results = pd.DataFrame(columns=['class_name', 'max_prob'])
-
-    results2 = []
-    for left_out_class in distinct_classes:
-        nine_classes = cleaned_df[cleaned_df['device_category'] != left_out_class]
-        left_out_class_df = cleaned_df[cleaned_df['device_category'] == left_out_class]
-
-        # Splitting dataset with one class out of dataset
-        x_train = nine_classes.drop('device_category', axis=1)
-        y_train = nine_classes['device_category']
-        x_test = left_out_class_df.drop('device_category', axis=1)
-        y_test = left_out_class_df['device_category']
-
-        # RF MODEL
-        # rf = RandomForestClassifier(100, criterion='gini', oob_score=True, n_jobs=-1,
-        #                             random_state=1, class_weight='balanced')
-        # rf.fit(x_train, y_train)
-        # y_pred = rf.predict_proba(x_test)
-
-        # LOG REG MODEL
-        model = build_logreg_model()
-        model.fit(x_train, y_train)
-
-        # y_pred = model.predict(x_test)
-        #
-        # report = classification_report(y_test, y_pred)
-        #
-        # logloss = log_loss(y_test, y_pred)
-
-        probs = model.predict_proba(x_test)
-
-        highest_prob = float(max([max(sample) for sample in probs]))
-
-        # results = results.append(pd.DataFrame([left_out_class, highest_prob]), ignore_index=True)
-
-        results2.append({'left_out_class': left_out_class, 'highest_prob': highest_prob})
-
-    # results.to_csv('oob_class_logreg_highest_probs.csv')
-
-    pd.DataFrame(results2).to_csv('oob_class_logreg_high_probs.csv')
-
-    print('test')
+    # all_y = cleaned_df['device_category']
+    #
+    # distinct_classes = np.unique(all_y).tolist()
+    #
+    # results = pd.DataFrame(columns=['class_name', 'max_prob'])
+    #
+    # results2 = []
+    # for left_out_class in distinct_classes:
+    #     nine_classes = cleaned_df[cleaned_df['device_category'] != left_out_class]
+    #     left_out_class_df = cleaned_df[cleaned_df['device_category'] == left_out_class]
+    #
+    #     # Splitting dataset with one class out of dataset
+    #     x_train = nine_classes.drop('device_category', axis=1)
+    #     y_train = nine_classes['device_category']
+    #     x_test = left_out_class_df.drop('device_category', axis=1)
+    #     y_test = left_out_class_df['device_category']
+    #
+    #     # RF MODEL
+    #     # rf = RandomForestClassifier(100, criterion='gini', oob_score=True, n_jobs=-1,
+    #     #                             random_state=1, class_weight='balanced')
+    #     # rf.fit(x_train, y_train)
+    #     # y_pred = rf.predict_proba(x_test)
+    #
+    #     # LOG REG MODEL
+    #     model = build_logreg_model()
+    #     model.fit(x_train, y_train)
+    #
+    #     # y_pred = model.predict(x_test)
+    #     #
+    #     # report = classification_report(y_test, y_pred)
+    #     #
+    #     # logloss = log_loss(y_test, y_pred)
+    #
+    #     probs = model.predict_proba(x_test)
+    #
+    #     highest_prob = float(max([max(sample) for sample in probs]))
+    #
+    #     # results = results.append(pd.DataFrame([left_out_class, highest_prob]), ignore_index=True)
+    #
+    #     results2.append({'left_out_class': left_out_class, 'highest_prob': highest_prob})
+    #
+    # # results.to_csv('oob_class_logreg_highest_probs.csv')
+    #
+    # pd.DataFrame(results2).to_csv('oob_class_logreg_high_probs.csv')
+    #
+    # print('test')
