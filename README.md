@@ -39,6 +39,8 @@ The data are relatively cleaned and structured, there are a few null entries so 
 
 We separate the problem to tackle the known and unknown devices in progression.
 
+![Classification Diagram Tree](iot_device_classification_diagram.png?raw=true "Classification Diagram Tree")
+
 #### Unknown devices
 
 IsolationForest is an algorithm used to detect anomalies by giving each observation a score depending if the algorithm consider the observation as an anomaly.
@@ -54,3 +56,6 @@ The IsolationForest algorithm is used in this problem to measure how well we rec
 After running through the algorithm above, we will be able to differentiate the unknown and known devices. Then we used a combination of RandomForest and XGBoost to classify the known category.
 
 Then we combine the two classifier together to create a combined classifer for known and unknown classes.
+
+## Results
+The algorithm achieved 89% accuracy and ranked 2nd in the IOT Device Track. In the overall competition, our group won overall 3rd prize for our accuracy and also our simple solution. The link for this the competition: https://www.kaggle.com/c/IoT_device_type_classification
