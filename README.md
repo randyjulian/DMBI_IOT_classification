@@ -1,5 +1,8 @@
 # dmbi-datathon
 
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Challenge: IoT Device Classification
 With the prevalence of IoT devices that is connected to the network of an organization, there is a risk of the device being attacked which may lead to the compromise of the security of the organization. We have a whitelist of device allowed to connect to the network and the challenge is to determine:
 1. Classify if the device: is the device type known or unknown?
